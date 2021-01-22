@@ -1,0 +1,109 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Budkova/Documents/Quartus/man
+T_opt
+!s110 1611322266
+VSG5COO2lW5_m;cXdhj9QN0
+04 13 19 work stand_test_tb stand_test_tb_behav 1
+=16-90b11c7f07c2-600ad39a-36d-231c
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;10.5;63
+Estand_test
+Z0 w1611322105
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 dC:/Users/Budkova/Documents/Quartus/self_test
+Z7 8C:/Users/Budkova/Documents/Quartus/self_test/stand_test.vhd
+Z8 FC:/Users/Budkova/Documents/Quartus/self_test/stand_test.vhd
+l0
+L20
+V10ZXO]JW2k_0USLVIhQ1g2
+!s100 PE[gK6M^<5UF]9zP^YIH11
+Z9 OL;C;10.5;63
+32
+Z10 !s110 1611322108
+!i10b 1
+Z11 !s108 1611322108.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Budkova/Documents/Quartus/self_test/stand_test.vhd|
+Z13 !s107 C:/Users/Budkova/Documents/Quartus/self_test/stand_test.vhd|
+!i113 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Astand_test_behav
+R1
+R2
+R3
+R4
+R5
+DEx4 work 10 stand_test 0 22 10ZXO]JW2k_0USLVIhQ1g2
+l40
+L28
+VH;RnaJ2][>M_cNOhifGYO2
+!s100 @QKbV<^oEH:V36iSGNbWc2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Estand_test_tb
+Z16 w1611322257
+R1
+R2
+R3
+R4
+R5
+R6
+Z17 8C:\Users\Budkova\Documents\Quartus\self_test\stand_test_tb.vhd
+Z18 FC:\Users\Budkova\Documents\Quartus\self_test\stand_test_tb.vhd
+l0
+L7
+VPIOJ?Q:CH]744_A<oO3gm2
+!s100 Q^Y2f`4z;3BFUiJZJiVHl0
+R9
+32
+Z19 !s110 1611322261
+!i10b 1
+Z20 !s108 1611322261.000000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:\Users\Budkova\Documents\Quartus\self_test\stand_test_tb.vhd|
+Z22 !s107 C:\Users\Budkova\Documents\Quartus\self_test\stand_test_tb.vhd|
+!i113 0
+R14
+R15
+Astand_test_tb_behav
+R1
+R2
+R3
+R4
+R5
+DEx4 work 13 stand_test_tb 0 22 PIOJ?Q:CH]744_A<oO3gm2
+l28
+L10
+VDB7@FYE_WFQbgGP73DnF]0
+!s100 O?GTFZ[LSW=jbaLzQKli@2
+R9
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 0
+R14
+R15
