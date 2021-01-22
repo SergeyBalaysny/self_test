@@ -1,0 +1,1217 @@
+TimeQuest Timing Analyzer report for self_test
+Mon Jul 29 11:17:06 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'p_CLK'
+ 13. Slow 1200mV 85C Model Hold: 'p_CLK'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'p_CLK'
+ 22. Slow 1200mV 0C Model Hold: 'p_CLK'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'p_CLK'
+ 30. Fast 1200mV 0C Model Hold: 'p_CLK'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; self_test                                           ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE22F17C6                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.04        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   2.2%      ;
+;     Processors 3-4         ;   0.8%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; p_CLK      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { p_CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 221.34 MHz ; 221.34 MHz      ; p_CLK      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; p_CLK ; -3.518 ; -170.052           ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; p_CLK ; 0.357 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; p_CLK ; -3.000 ; -80.000                          ;
++-------+--------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'p_CLK'                                                                                                                               ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.518 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.437      ;
+; -3.512 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.431      ;
+; -3.491 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.406      ;
+; -3.475 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.390      ;
+; -3.457 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.372      ;
+; -3.413 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.332      ;
+; -3.381 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.296      ;
+; -3.348 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.271      ;
+; -3.346 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.269      ;
+; -3.345 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.268      ;
+; -3.344 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.267      ;
+; -3.342 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.265      ;
+; -3.340 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.263      ;
+; -3.339 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.262      ;
+; -3.338 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.261      ;
+; -3.332 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.257      ;
+; -3.331 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.256      ;
+; -3.329 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.254      ;
+; -3.328 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.253      ;
+; -3.327 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.252      ;
+; -3.326 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.251      ;
+; -3.325 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.250      ;
+; -3.324 ; MK_emulator:mk_emulator_module|s_CNT[0]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.067     ; 4.252      ;
+; -3.323 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.248      ;
+; -3.322 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.247      ;
+; -3.321 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.240      ;
+; -3.321 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.246      ;
+; -3.319 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.238      ;
+; -3.319 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.238      ;
+; -3.318 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.237      ;
+; -3.318 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.237      ;
+; -3.317 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.236      ;
+; -3.317 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.236      ;
+; -3.315 ; MK_emulator:mk_emulator_module|s_CNT[15] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.082     ; 4.228      ;
+; -3.313 ; MK_emulator:mk_emulator_module|s_CNT[1]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.067     ; 4.241      ;
+; -3.312 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.231      ;
+; -3.305 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.226      ;
+; -3.305 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.226      ;
+; -3.305 ; MK_emulator:mk_emulator_module|s_CNT[14] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.082     ; 4.218      ;
+; -3.304 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.225      ;
+; -3.302 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.223      ;
+; -3.302 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.223      ;
+; -3.301 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.222      ;
+; -3.301 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.222      ;
+; -3.300 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.221      ;
+; -3.300 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.221      ;
+; -3.300 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.221      ;
+; -3.299 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.218      ;
+; -3.293 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.212      ;
+; -3.287 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.206      ;
+; -3.285 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.204      ;
+; -3.284 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.203      ;
+; -3.283 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.202      ;
+; -3.275 ; MK_emulator:mk_emulator_module|s_CNT[24] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.194      ;
+; -3.272 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.187      ;
+; -3.271 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.192      ;
+; -3.270 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.191      ;
+; -3.268 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.189      ;
+; -3.267 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.188      ;
+; -3.266 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.187      ;
+; -3.261 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.176      ;
+; -3.243 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.166      ;
+; -3.241 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.164      ;
+; -3.240 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.163      ;
+; -3.239 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.072     ; 4.162      ;
+; -3.238 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.153      ;
+; -3.235 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.057     ; 4.173      ;
+; -3.235 ; MK_emulator:mk_emulator_module|s_CNT[3]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.062     ; 4.168      ;
+; -3.234 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.057     ; 4.172      ;
+; -3.229 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.057     ; 4.167      ;
+; -3.228 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.057     ; 4.166      ;
+; -3.227 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.152      ;
+; -3.226 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.151      ;
+; -3.224 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.149      ;
+; -3.223 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.148      ;
+; -3.222 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 4.147      ;
+; -3.217 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.067     ; 4.145      ;
+; -3.216 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 4.148      ;
+; -3.215 ; MK_emulator:mk_emulator_module|s_CNT[8]  ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.062     ; 4.148      ;
+; -3.211 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.130      ;
+; -3.210 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 4.142      ;
+; -3.210 ; MK_emulator:mk_emulator_module|s_CNT[0]  ; MK_emulator:mk_emulator_module|s_CNT[29] ; p_CLK        ; p_CLK       ; 1.000        ; -0.081     ; 4.124      ;
+; -3.209 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.128      ;
+; -3.209 ; MK_emulator:mk_emulator_module|s_CNT[17] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.082     ; 4.122      ;
+; -3.208 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.127      ;
+; -3.208 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.061     ; 4.142      ;
+; -3.208 ; MK_emulator:mk_emulator_module|s_CNT[2]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.067     ; 4.136      ;
+; -3.207 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.126      ;
+; -3.207 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.061     ; 4.141      ;
+; -3.204 ; MK_emulator:mk_emulator_module|s_CNT[10] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.062     ; 4.137      ;
+; -3.203 ; MK_emulator:mk_emulator_module|s_CNT[20] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.080     ; 4.118      ;
+; -3.199 ; MK_emulator:mk_emulator_module|s_CNT[1]  ; MK_emulator:mk_emulator_module|s_CNT[29] ; p_CLK        ; p_CLK       ; 1.000        ; -0.081     ; 4.113      ;
+; -3.198 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.061     ; 4.132      ;
+; -3.197 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.061     ; 4.131      ;
+; -3.195 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.116      ;
+; -3.194 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.115      ;
+; -3.194 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.076     ; 4.113      ;
+; -3.192 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.113      ;
+; -3.191 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.112      ;
+; -3.190 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 4.111      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'p_CLK'                                                                                                                                                                       ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                     ; To Node                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[0]                       ; MK_emulator:mk_emulator_module|s_CNT[0]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[1]                       ; MK_emulator:mk_emulator_module|s_CNT[1]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[2]                       ; MK_emulator:mk_emulator_module|s_CNT[2]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[4]                       ; MK_emulator:mk_emulator_module|s_CNT[4]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[6]                       ; MK_emulator:mk_emulator_module|s_CNT[6]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[7]                       ; MK_emulator:mk_emulator_module|s_CNT[7]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[11]                      ; MK_emulator:mk_emulator_module|s_CNT[11]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[12]                      ; MK_emulator:mk_emulator_module|s_CNT[12]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.357 ; MK_emulator:mk_emulator_module|s_CNT[13]                      ; MK_emulator:mk_emulator_module|s_CNT[13]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG              ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[18]                      ; MK_emulator:mk_emulator_module|s_CNT[18]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[20]                      ; MK_emulator:mk_emulator_module|s_CNT[20]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[26]                      ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[28]                      ; MK_emulator:mk_emulator_module|s_CNT[28]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[29]                      ; MK_emulator:mk_emulator_module|s_CNT[29]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[30]                      ; MK_emulator:mk_emulator_module|s_CNT[30]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[9]                       ; MK_emulator:mk_emulator_module|s_CNT[9]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data  ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[10]                      ; MK_emulator:mk_emulator_module|s_CNT[10]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[8]                       ; MK_emulator:mk_emulator_module|s_CNT[8]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[5]                       ; MK_emulator:mk_emulator_module|s_CNT[5]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; MK_emulator:mk_emulator_module|s_CNT[3]                       ; MK_emulator:mk_emulator_module|s_CNT[3]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.577      ;
+; 0.359 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.577      ;
+; 0.359 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.577      ;
+; 0.362 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.580      ;
+; 0.373 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.373 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 0.593      ;
+; 0.374 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[3]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.593      ;
+; 0.374 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.593      ;
+; 0.377 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.596      ;
+; 0.400 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.619      ;
+; 0.400 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.618      ;
+; 0.413 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.632      ;
+; 0.420 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_write_mode ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.638      ;
+; 0.479 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[2]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.698      ;
+; 0.510 ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.728      ;
+; 0.516 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.735      ;
+; 0.517 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.735      ;
+; 0.525 ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.743      ;
+; 0.532 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.064      ; 0.753      ;
+; 0.557 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.776      ;
+; 0.558 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.777      ;
+; 0.558 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.777      ;
+; 0.561 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.780      ;
+; 0.562 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.781      ;
+; 0.578 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.797      ;
+; 0.579 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[0]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.798      ;
+; 0.589 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.808      ;
+; 0.617 ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.836      ;
+; 0.652 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.870      ;
+; 0.677 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.895      ;
+; 0.680 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.899      ;
+; 0.680 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.064      ; 0.901      ;
+; 0.682 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.900      ;
+; 0.687 ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.906      ;
+; 0.717 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 0.935      ;
+; 0.757 ; MK_emulator:mk_emulator_module|s_CNT[31]                      ; MK_emulator:mk_emulator_module|p_VOLTAGE_STRB               ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 0.976      ;
+; 0.778 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.075      ; 1.010      ;
+; 0.788 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.075      ; 1.020      ;
+; 0.806 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.025      ;
+; 0.822 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[3]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 1.035      ;
+; 0.831 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]          ; MK_emulator:mk_emulator_module|s_CNT[31]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.050      ;
+; 0.832 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.051      ;
+; 0.832 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.051      ;
+; 0.833 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.052      ;
+; 0.842 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.060      ;
+; 0.846 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.065      ;
+; 0.848 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.066      ;
+; 0.848 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.066      ;
+; 0.848 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.067      ;
+; 0.848 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.067      ;
+; 0.849 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.068      ;
+; 0.850 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.069      ;
+; 0.851 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.070      ;
+; 0.852 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.070      ;
+; 0.854 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.072      ;
+; 0.858 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.076      ;
+; 0.858 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.076      ;
+; 0.892 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[1]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.111      ;
+; 0.894 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.066      ; 1.117      ;
+; 0.895 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.066      ; 1.118      ;
+; 0.942 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.161      ;
+; 0.942 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.161      ;
+; 0.944 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.163      ;
+; 0.944 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.163      ;
+; 0.958 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.177      ;
+; 0.960 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.179      ;
+; 0.960 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.179      ;
+; 0.962 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.181      ;
+; 0.966 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.184      ;
+; 0.972 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.190      ;
+; 0.972 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.190      ;
+; 0.978 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.196      ;
+; 0.980 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.198      ;
+; 0.982 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.201      ;
+; 0.984 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.202      ;
+; 0.984 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.061      ; 1.202      ;
+; 1.018 ; MK_emulator:mk_emulator_module|s_CNT[17]                      ; MK_emulator:mk_emulator_module|s_CNT[17]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.063      ; 1.238      ;
+; 1.020 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.062      ; 1.239      ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 245.52 MHz ; 245.52 MHz      ; p_CLK      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; p_CLK ; -3.073 ; -146.362          ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; p_CLK ; 0.311 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; p_CLK ; -3.000 ; -80.000                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'p_CLK'                                                                                                                                ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.073 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.999      ;
+; -3.068 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.994      ;
+; -3.060 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.981      ;
+; -3.053 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.974      ;
+; -3.019 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.940      ;
+; -2.987 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.913      ;
+; -2.958 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.879      ;
+; -2.928 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.853      ;
+; -2.928 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.853      ;
+; -2.927 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.852      ;
+; -2.921 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.846      ;
+; -2.916 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.843      ;
+; -2.914 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.844      ;
+; -2.913 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.840      ;
+; -2.913 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.840      ;
+; -2.911 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.841      ;
+; -2.911 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.841      ;
+; -2.910 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.837      ;
+; -2.910 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.837      ;
+; -2.909 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.839      ;
+; -2.909 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.839      ;
+; -2.906 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.836      ;
+; -2.906 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.836      ;
+; -2.905 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.837      ;
+; -2.904 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.836      ;
+; -2.904 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.834      ;
+; -2.902 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.834      ;
+; -2.901 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.833      ;
+; -2.901 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.833      ;
+; -2.900 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.832      ;
+; -2.899 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.831      ;
+; -2.897 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.829      ;
+; -2.896 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.828      ;
+; -2.896 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.828      ;
+; -2.894 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.819      ;
+; -2.891 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.812      ;
+; -2.891 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.816      ;
+; -2.891 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.816      ;
+; -2.890 ; MK_emulator:mk_emulator_module|s_CNT[15] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.075     ; 3.810      ;
+; -2.889 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.814      ;
+; -2.885 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.812      ;
+; -2.884 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.811      ;
+; -2.883 ; MK_emulator:mk_emulator_module|s_CNT[14] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.075     ; 3.803      ;
+; -2.882 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.809      ;
+; -2.881 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.808      ;
+; -2.881 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.808      ;
+; -2.877 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.803      ;
+; -2.872 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.798      ;
+; -2.860 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.785      ;
+; -2.859 ; MK_emulator:mk_emulator_module|s_CNT[24] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.785      ;
+; -2.857 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.782      ;
+; -2.857 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.782      ;
+; -2.857 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.778      ;
+; -2.855 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.780      ;
+; -2.851 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.778      ;
+; -2.850 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.777      ;
+; -2.848 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.775      ;
+; -2.847 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.774      ;
+; -2.847 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.774      ;
+; -2.846 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.787      ;
+; -2.846 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.787      ;
+; -2.828 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.758      ;
+; -2.826 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.060     ; 3.761      ;
+; -2.825 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.755      ;
+; -2.825 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.755      ;
+; -2.823 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.065     ; 3.753      ;
+; -2.823 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.744      ;
+; -2.821 ; MK_emulator:mk_emulator_module|s_CNT[10] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.056     ; 3.760      ;
+; -2.821 ; MK_emulator:mk_emulator_module|s_CNT[8]  ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.056     ; 3.760      ;
+; -2.819 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.751      ;
+; -2.818 ; MK_emulator:mk_emulator_module|s_CNT[20] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.739      ;
+; -2.818 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.750      ;
+; -2.817 ; MK_emulator:mk_emulator_module|s_CNT[0]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.060     ; 3.752      ;
+; -2.816 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.748      ;
+; -2.815 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.747      ;
+; -2.815 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.063     ; 3.747      ;
+; -2.802 ; MK_emulator:mk_emulator_module|s_CNT[17] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.075     ; 3.722      ;
+; -2.799 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.724      ;
+; -2.796 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.721      ;
+; -2.796 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.721      ;
+; -2.794 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.070     ; 3.719      ;
+; -2.793 ; MK_emulator:mk_emulator_module|s_CNT[1]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.060     ; 3.728      ;
+; -2.791 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.069     ; 3.717      ;
+; -2.790 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.717      ;
+; -2.789 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.716      ;
+; -2.787 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.714      ;
+; -2.786 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.713      ;
+; -2.786 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.068     ; 3.713      ;
+; -2.784 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.055     ; 3.724      ;
+; -2.780 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.721      ;
+; -2.780 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.721      ;
+; -2.779 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.055     ; 3.719      ;
+; -2.769 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.049     ; 3.715      ;
+; -2.768 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.049     ; 3.714      ;
+; -2.764 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.060     ; 3.699      ;
+; -2.764 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.049     ; 3.710      ;
+; -2.763 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.049     ; 3.709      ;
+; -2.762 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.074     ; 3.683      ;
+; -2.759 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[15] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.700      ;
+; -2.758 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[16] ; p_CLK        ; p_CLK       ; 1.000        ; -0.054     ; 3.699      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'p_CLK'                                                                                                                                                                        ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                     ; To Node                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.311 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG              ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[18]                      ; MK_emulator:mk_emulator_module|s_CNT[18]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[20]                      ; MK_emulator:mk_emulator_module|s_CNT[20]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[26]                      ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[28]                      ; MK_emulator:mk_emulator_module|s_CNT[28]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[29]                      ; MK_emulator:mk_emulator_module|s_CNT[29]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[30]                      ; MK_emulator:mk_emulator_module|s_CNT[30]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[9]                       ; MK_emulator:mk_emulator_module|s_CNT[9]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[10]                      ; MK_emulator:mk_emulator_module|s_CNT[10]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[8]                       ; MK_emulator:mk_emulator_module|s_CNT[8]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[5]                       ; MK_emulator:mk_emulator_module|s_CNT[5]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[0]                       ; MK_emulator:mk_emulator_module|s_CNT[0]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[1]                       ; MK_emulator:mk_emulator_module|s_CNT[1]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[2]                       ; MK_emulator:mk_emulator_module|s_CNT[2]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[3]                       ; MK_emulator:mk_emulator_module|s_CNT[3]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[4]                       ; MK_emulator:mk_emulator_module|s_CNT[4]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[6]                       ; MK_emulator:mk_emulator_module|s_CNT[6]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[7]                       ; MK_emulator:mk_emulator_module|s_CNT[7]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[11]                      ; MK_emulator:mk_emulator_module|s_CNT[11]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[12]                      ; MK_emulator:mk_emulator_module|s_CNT[12]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; MK_emulator:mk_emulator_module|s_CNT[13]                      ; MK_emulator:mk_emulator_module|s_CNT[13]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.511      ;
+; 0.312 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data  ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.511      ;
+; 0.312 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.511      ;
+; 0.312 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.511      ;
+; 0.312 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.511      ;
+; 0.320 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.519      ;
+; 0.336 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.535      ;
+; 0.339 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[3]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.539      ;
+; 0.340 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.539      ;
+; 0.340 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.539      ;
+; 0.340 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.539      ;
+; 0.354 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.553      ;
+; 0.361 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.561      ;
+; 0.367 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.566      ;
+; 0.368 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_write_mode ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.567      ;
+; 0.432 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[2]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.631      ;
+; 0.465 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.665      ;
+; 0.466 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.665      ;
+; 0.474 ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.053      ; 0.671      ;
+; 0.482 ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.053      ; 0.679      ;
+; 0.490 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.057      ; 0.691      ;
+; 0.500 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.699      ;
+; 0.500 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.699      ;
+; 0.502 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.701      ;
+; 0.504 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.703      ;
+; 0.504 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.703      ;
+; 0.516 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.716      ;
+; 0.519 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[0]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.718      ;
+; 0.529 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.729      ;
+; 0.567 ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.766      ;
+; 0.576 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.775      ;
+; 0.607 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.806      ;
+; 0.619 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.819      ;
+; 0.624 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.057      ; 0.825      ;
+; 0.624 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.823      ;
+; 0.629 ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.828      ;
+; 0.652 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.851      ;
+; 0.691 ; MK_emulator:mk_emulator_module|s_CNT[31]                      ; MK_emulator:mk_emulator_module|p_VOLTAGE_STRB               ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.891      ;
+; 0.720 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.065      ; 0.929      ;
+; 0.728 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.065      ; 0.937      ;
+; 0.730 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.930      ;
+; 0.744 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.943      ;
+; 0.745 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.944      ;
+; 0.745 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]          ; MK_emulator:mk_emulator_module|s_CNT[31]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 0.945      ;
+; 0.745 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.944      ;
+; 0.746 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.945      ;
+; 0.748 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[3]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.050      ; 0.942      ;
+; 0.750 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.949      ;
+; 0.751 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.950      ;
+; 0.752 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.951      ;
+; 0.752 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.951      ;
+; 0.753 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.952      ;
+; 0.753 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.952      ;
+; 0.754 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.953      ;
+; 0.758 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.957      ;
+; 0.758 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.957      ;
+; 0.759 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.958      ;
+; 0.760 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.959      ;
+; 0.760 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 0.959      ;
+; 0.819 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[1]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 1.019      ;
+; 0.821 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.059      ; 1.024      ;
+; 0.822 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.059      ; 1.025      ;
+; 0.833 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.032      ;
+; 0.834 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.033      ;
+; 0.840 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.039      ;
+; 0.841 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.040      ;
+; 0.848 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.047      ;
+; 0.849 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.048      ;
+; 0.855 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.054      ;
+; 0.856 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.055      ;
+; 0.857 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.056      ;
+; 0.862 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.061      ;
+; 0.863 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.062      ;
+; 0.867 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.066      ;
+; 0.869 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.068      ;
+; 0.873 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.072      ;
+; 0.873 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.072      ;
+; 0.880 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.079      ;
+; 0.908 ; MK_emulator:mk_emulator_module|s_CNT[17]                      ; MK_emulator:mk_emulator_module|s_CNT[17]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.055      ; 1.107      ;
+; 0.909 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.056      ; 1.109      ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; p_CLK ; -1.581 ; -67.390           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; p_CLK ; 0.186 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; p_CLK ; -3.000 ; -84.354                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'p_CLK'                                                                                                                                ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.581 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.520      ;
+; -1.580 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.519      ;
+; -1.554 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.489      ;
+; -1.541 ; MK_emulator:mk_emulator_module|s_CNT[1]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.041     ; 2.487      ;
+; -1.540 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.475      ;
+; -1.523 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.458      ;
+; -1.516 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.455      ;
+; -1.515 ; MK_emulator:mk_emulator_module|s_CNT[0]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.041     ; 2.461      ;
+; -1.496 ; MK_emulator:mk_emulator_module|s_CNT[3]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.037     ; 2.446      ;
+; -1.490 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.434      ;
+; -1.489 ; MK_emulator:mk_emulator_module|s_CNT[19] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.424      ;
+; -1.489 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.433      ;
+; -1.488 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.432      ;
+; -1.487 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.431      ;
+; -1.486 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.430      ;
+; -1.485 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.429      ;
+; -1.483 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.426      ;
+; -1.482 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.426      ;
+; -1.482 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.425      ;
+; -1.481 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.425      ;
+; -1.480 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.423      ;
+; -1.480 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.423      ;
+; -1.480 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.424      ;
+; -1.479 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.422      ;
+; -1.479 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.422      ;
+; -1.479 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.423      ;
+; -1.477 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.420      ;
+; -1.476 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.419      ;
+; -1.473 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.428      ;
+; -1.472 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.427      ;
+; -1.471 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.426      ;
+; -1.470 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.425      ;
+; -1.468 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.407      ;
+; -1.467 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.406      ;
+; -1.465 ; MK_emulator:mk_emulator_module|s_CNT[15] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.053     ; 2.399      ;
+; -1.464 ; MK_emulator:mk_emulator_module|s_CNT[7]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.042     ; 2.409      ;
+; -1.463 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.403      ;
+; -1.461 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.401      ;
+; -1.460 ; MK_emulator:mk_emulator_module|s_CNT[14] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.053     ; 2.394      ;
+; -1.459 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.399      ;
+; -1.456 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.395      ;
+; -1.455 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.395      ;
+; -1.453 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.392      ;
+; -1.453 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.392      ;
+; -1.453 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.393      ;
+; -1.450 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.389      ;
+; -1.449 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.389      ;
+; -1.447 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.387      ;
+; -1.446 ; MK_emulator:mk_emulator_module|s_CNT[14] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.053     ; 2.380      ;
+; -1.446 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.397      ;
+; -1.446 ; MK_emulator:mk_emulator_module|s_CNT[2]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.041     ; 2.392      ;
+; -1.445 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.385      ;
+; -1.444 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.395      ;
+; -1.443 ; MK_emulator:mk_emulator_module|s_CNT[24] ; MK_emulator:mk_emulator_module|s_CNT[3]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.382      ;
+; -1.442 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.381      ;
+; -1.441 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.376      ;
+; -1.441 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.381      ;
+; -1.439 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.378      ;
+; -1.439 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.378      ;
+; -1.439 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.379      ;
+; -1.437 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.388      ;
+; -1.436 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.375      ;
+; -1.436 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.387      ;
+; -1.434 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[16] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.389      ;
+; -1.433 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[15] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.388      ;
+; -1.433 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[16] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.388      ;
+; -1.432 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.372      ;
+; -1.432 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.383      ;
+; -1.432 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[15] ; p_CLK        ; p_CLK       ; 1.000        ; -0.032     ; 2.387      ;
+; -1.430 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.370      ;
+; -1.430 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.381      ;
+; -1.428 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.368      ;
+; -1.427 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[27] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.381      ;
+; -1.427 ; MK_emulator:mk_emulator_module|s_CNT[9]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.362      ;
+; -1.426 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[27] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.380      ;
+; -1.425 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[13] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.369      ;
+; -1.425 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.364      ;
+; -1.424 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[19] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.378      ;
+; -1.424 ; MK_emulator:mk_emulator_module|s_CNT[22] ; MK_emulator:mk_emulator_module|s_CNT[21] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.378      ;
+; -1.424 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.364      ;
+; -1.423 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[11] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.367      ;
+; -1.423 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[19] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.377      ;
+; -1.423 ; MK_emulator:mk_emulator_module|s_CNT[23] ; MK_emulator:mk_emulator_module|s_CNT[21] ; p_CLK        ; p_CLK       ; 1.000        ; -0.033     ; 2.377      ;
+; -1.423 ; MK_emulator:mk_emulator_module|s_CNT[6]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.042     ; 2.368      ;
+; -1.422 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.361      ;
+; -1.422 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.361      ;
+; -1.422 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.047     ; 2.362      ;
+; -1.421 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[12] ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.365      ;
+; -1.421 ; MK_emulator:mk_emulator_module|s_CNT[5]  ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.037     ; 2.371      ;
+; -1.419 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.048     ; 2.358      ;
+; -1.418 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[4]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.361      ;
+; -1.417 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[7]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.361      ;
+; -1.415 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[0]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.358      ;
+; -1.415 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[1]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.358      ;
+; -1.415 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[6]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.043     ; 2.359      ;
+; -1.415 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[17] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.366      ;
+; -1.413 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[14] ; p_CLK        ; p_CLK       ; 1.000        ; -0.036     ; 2.364      ;
+; -1.412 ; MK_emulator:mk_emulator_module|s_CNT[25] ; MK_emulator:mk_emulator_module|s_CNT[2]  ; p_CLK        ; p_CLK       ; 1.000        ; -0.044     ; 2.355      ;
+; -1.410 ; MK_emulator:mk_emulator_module|s_CNT[18] ; MK_emulator:mk_emulator_module|s_CNT[31] ; p_CLK        ; p_CLK       ; 1.000        ; -0.052     ; 2.345      ;
+; -1.410 ; MK_emulator:mk_emulator_module|s_CNT[21] ; MK_emulator:mk_emulator_module|s_CNT[25] ; p_CLK        ; p_CLK       ; 1.000        ; -0.040     ; 2.357      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'p_CLK'                                                                                                                                                                        ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                     ; To Node                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.186 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG              ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[18]                      ; MK_emulator:mk_emulator_module|s_CNT[18]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[20]                      ; MK_emulator:mk_emulator_module|s_CNT[20]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[26]                      ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[28]                      ; MK_emulator:mk_emulator_module|s_CNT[28]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[29]                      ; MK_emulator:mk_emulator_module|s_CNT[29]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[30]                      ; MK_emulator:mk_emulator_module|s_CNT[30]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[9]                       ; MK_emulator:mk_emulator_module|s_CNT[9]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data  ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[10]                      ; MK_emulator:mk_emulator_module|s_CNT[10]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[8]                       ; MK_emulator:mk_emulator_module|s_CNT[8]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[5]                       ; MK_emulator:mk_emulator_module|s_CNT[5]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[0]                       ; MK_emulator:mk_emulator_module|s_CNT[0]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[1]                       ; MK_emulator:mk_emulator_module|s_CNT[1]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[2]                       ; MK_emulator:mk_emulator_module|s_CNT[2]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[3]                       ; MK_emulator:mk_emulator_module|s_CNT[3]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[4]                       ; MK_emulator:mk_emulator_module|s_CNT[4]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[6]                       ; MK_emulator:mk_emulator_module|s_CNT[6]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[7]                       ; MK_emulator:mk_emulator_module|s_CNT[7]                     ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[11]                      ; MK_emulator:mk_emulator_module|s_CNT[11]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[12]                      ; MK_emulator:mk_emulator_module|s_CNT[12]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; MK_emulator:mk_emulator_module|s_CNT[13]                      ; MK_emulator:mk_emulator_module|s_CNT[13]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.307      ;
+; 0.187 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.307      ;
+; 0.193 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.193 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB           ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.314      ;
+; 0.194 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]              ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                 ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.194 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[3]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.315      ;
+; 0.196 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.317      ;
+; 0.209 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.330      ;
+; 0.210 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.331      ;
+; 0.220 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.341      ;
+; 0.227 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_write_mode ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.347      ;
+; 0.253 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[3]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[2]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.374      ;
+; 0.261 ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[1]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.381      ;
+; 0.266 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[2]      ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.387      ;
+; 0.267 ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]                 ; MK_emulator:mk_emulator_module|s_CURR_VOLTAGE[0]            ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.387      ;
+; 0.267 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.387      ;
+; 0.270 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[0]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.038      ; 0.392      ;
+; 0.297 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.418      ;
+; 0.297 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.418      ;
+; 0.298 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.419      ;
+; 0.299 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.420      ;
+; 0.299 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.420      ;
+; 0.308 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[0]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.429      ;
+; 0.309 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.430      ;
+; 0.318 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[0]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.439      ;
+; 0.321 ; MK_emulator:mk_emulator_module|p_VOLTAGE[0]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.441      ;
+; 0.346 ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]             ; MK_emulator:mk_emulator_module|s_CURR_MODE[1]               ; p_CLK        ; p_CLK       ; 0.000        ; 0.038      ; 0.468      ;
+; 0.350 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.470      ;
+; 0.351 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.471      ;
+; 0.359 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[0]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.479      ;
+; 0.362 ; MK_emulator:mk_emulator_module|p_VOLTAGE[1]                   ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.482      ;
+; 0.365 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.486      ;
+; 0.377 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[1]       ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE       ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.497      ;
+; 0.405 ; MK_emulator:mk_emulator_module|s_CNT[31]                      ; MK_emulator:mk_emulator_module|p_VOLTAGE_STRB               ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.526      ;
+; 0.408 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[1]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[1]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.045      ; 0.537      ;
+; 0.414 ; stand_test:fpga_emulator_module|s_VOLTAGE_MODE[0]             ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE[0]           ; p_CLK        ; p_CLK       ; 0.000        ; 0.045      ; 0.543      ;
+; 0.434 ; stand_test:fpga_emulator_module|s_VOLTAGE_STRB_FILTER[1]      ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.555      ;
+; 0.441 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]          ; MK_emulator:mk_emulator_module|s_CNT[31]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.562      ;
+; 0.441 ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[3]       ; stand_test:fpga_emulator_module|s_BTN_VOLTAGE_FILTER[2]     ; p_CLK        ; p_CLK       ; 0.000        ; 0.031      ; 0.556      ;
+; 0.446 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.567      ;
+; 0.446 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.567      ;
+; 0.447 ; stand_test:fpga_emulator_module|s_CNT[5]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.568      ;
+; 0.455 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[1]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.576      ;
+; 0.457 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.578      ;
+; 0.457 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.578      ;
+; 0.458 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[2]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.579      ;
+; 0.459 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.579      ;
+; 0.459 ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[1]          ; MK_emulator:mk_emulator_module|s_MODE_STRB_FILTER[0]        ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.580      ;
+; 0.460 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.581      ;
+; 0.460 ; stand_test:fpga_emulator_module|s_CNT[4]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.581      ;
+; 0.461 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.581      ;
+; 0.463 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.583      ;
+; 0.463 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.583      ;
+; 0.464 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.584      ;
+; 0.466 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.586      ;
+; 0.468 ; stand_test:fpga_emulator_module|s_SELECT_MODE_VOLATGE         ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.588      ;
+; 0.471 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[1]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.040      ; 0.595      ;
+; 0.471 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_read_data    ; stand_test:fpga_emulator_module|s_VOLTAGE_VALUE[0]          ; p_CLK        ; p_CLK       ; 0.000        ; 0.040      ; 0.595      ;
+; 0.509 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.630      ;
+; 0.509 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.630      ;
+; 0.512 ; stand_test:fpga_emulator_module|s_CNT[1]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.633      ;
+; 0.512 ; stand_test:fpga_emulator_module|s_CNT[3]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.633      ;
+; 0.521 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[3]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.642      ;
+; 0.523 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[5]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.644      ;
+; 0.524 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[3]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.644      ;
+; 0.524 ; stand_test:fpga_emulator_module|s_CNT[0]                      ; stand_test:fpga_emulator_module|s_CNT[4]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.645      ;
+; 0.526 ; stand_test:fpga_emulator_module|s_CNT[2]                      ; stand_test:fpga_emulator_module|s_CNT[6]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.647      ;
+; 0.528 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[5]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.648      ;
+; 0.529 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[1]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.649      ;
+; 0.533 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[4]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.653      ;
+; 0.535 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[2]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.655      ;
+; 0.538 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[0]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.658      ;
+; 0.540 ; stand_test:fpga_emulator_module|s_VOLTAGE_FSM.st_set_new_mode ; stand_test:fpga_emulator_module|p_LED_OUT[6]                ; p_CLK        ; p_CLK       ; 0.000        ; 0.036      ; 0.660      ;
+; 0.543 ; stand_test:fpga_emulator_module|s_CNT[6]                      ; stand_test:fpga_emulator_module|p_VOLTAGE_MODE_STRB         ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.664      ;
+; 0.554 ; MK_emulator:mk_emulator_module|s_CNT[17]                      ; MK_emulator:mk_emulator_module|s_CNT[17]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.675      ;
+; 0.554 ; MK_emulator:mk_emulator_module|s_INP_MODE_FLAG                ; MK_emulator:mk_emulator_module|s_CNT[26]                    ; p_CLK        ; p_CLK       ; 0.000        ; 0.037      ; 0.675      ;
++-------+---------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.518   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+;  p_CLK           ; -3.518   ; 0.186 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -170.052 ; 0.0   ; 0.0      ; 0.0     ; -84.354             ;
+;  p_CLK           ; -170.052 ; 0.000 ; N/A      ; N/A     ; -84.354             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; p_FPGA_LED[0] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[1] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[2] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[3] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[4] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[5] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; p_FPGA_LED[6] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; p_CLK                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; p_FPGA_BTN_VLT          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; p_FPGA_LED[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; p_FPGA_LED[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; p_FPGA_LED[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; p_FPGA_LED[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; p_FPGA_LED[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.33 V              ; -0.00624 V          ; 0.185 V                              ; 0.097 V                              ; 2.82e-09 s                  ; 2.56e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.33 V             ; -0.00624 V         ; 0.185 V                             ; 0.097 V                             ; 2.82e-09 s                 ; 2.56e-09 s                 ; No                        ; Yes                       ;
+; p_FPGA_LED[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.45e-09 V                   ; 2.38 V              ; -0.0609 V           ; 0.148 V                              ; 0.095 V                              ; 2.82e-10 s                  ; 2.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.45e-09 V                  ; 2.38 V             ; -0.0609 V          ; 0.148 V                             ; 0.095 V                             ; 2.82e-10 s                 ; 2.59e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.61e-09 V                   ; 2.38 V              ; -0.00274 V          ; 0.141 V                              ; 0.006 V                              ; 4.7e-10 s                   ; 6.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.61e-09 V                  ; 2.38 V             ; -0.00274 V         ; 0.141 V                             ; 0.006 V                             ; 4.7e-10 s                  ; 6.02e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; p_FPGA_LED[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
+; p_FPGA_LED[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.33 V              ; -0.00349 V          ; 0.163 V                              ; 0.074 V                              ; 3.33e-09 s                  ; 3.14e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.33 V             ; -0.00349 V         ; 0.163 V                             ; 0.074 V                             ; 3.33e-09 s                 ; 3.14e-09 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.74e-07 V                   ; 2.36 V              ; -0.0201 V           ; 0.072 V                              ; 0.033 V                              ; 4.04e-10 s                  ; 3.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.74e-07 V                  ; 2.36 V             ; -0.0201 V          ; 0.072 V                             ; 0.033 V                             ; 4.04e-10 s                 ; 3.29e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.45e-07 V                   ; 2.35 V              ; -0.00643 V          ; 0.081 V                              ; 0.031 V                              ; 5.31e-10 s                  ; 7.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.45e-07 V                  ; 2.35 V             ; -0.00643 V         ; 0.081 V                             ; 0.031 V                             ; 5.31e-10 s                 ; 7.59e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; p_FPGA_LED[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; p_FPGA_LED[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; p_FPGA_LED[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; p_FPGA_LED[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; p_CLK      ; p_CLK    ; 3429     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; p_CLK      ; p_CLK    ; 3429     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 7     ; 7    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; p_CLK  ; p_CLK ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                             ;
++----------------+--------------------------------------------------------------------------------------+
+; Input Port     ; Comment                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; p_FPGA_BTN_VLT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; p_FPGA_LED[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                             ;
++----------------+--------------------------------------------------------------------------------------+
+; Input Port     ; Comment                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; p_FPGA_BTN_VLT ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; p_FPGA_LED[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; p_FPGA_LED[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Jul 29 11:17:04 2019
+Info: Command: quartus_sta self_test -c self_test
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'self_test.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name p_CLK p_CLK
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.518
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.518            -170.052 p_CLK 
+Info (332146): Worst-case hold slack is 0.357
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.357               0.000 p_CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -80.000 p_CLK 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.073
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.073            -146.362 p_CLK 
+Info (332146): Worst-case hold slack is 0.311
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.311               0.000 p_CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -80.000 p_CLK 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.581
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.581             -67.390 p_CLK 
+Info (332146): Worst-case hold slack is 0.186
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.186               0.000 p_CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -84.354 p_CLK 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 636 megabytes
+    Info: Processing ended: Mon Jul 29 11:17:06 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

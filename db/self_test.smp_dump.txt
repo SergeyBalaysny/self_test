@@ -1,0 +1,6 @@
+
+State Machine - |self_test|stand_test:fpga_emulator_module|s_VOLTAGE_FSM
+Name s_VOLTAGE_FSM.st_set_new_mode s_VOLTAGE_FSM.st_read_data s_VOLTAGE_FSM.st_write_mode 
+s_VOLTAGE_FSM.st_write_mode 0 0 0 
+s_VOLTAGE_FSM.st_read_data 0 1 1 
+s_VOLTAGE_FSM.st_set_new_mode 1 0 1 

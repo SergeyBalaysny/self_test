@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "p_FPGA_LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "p_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "p_FPGA_BTN_VLT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
