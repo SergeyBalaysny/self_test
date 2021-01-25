@@ -34,6 +34,7 @@ architecture stand_test_behav of stand_test is
 	SIGNAL s_IMP_CNT:				integer range 0 to 63 := 0;			-- количество выдаваемых импульсов при проверки импульсоного деиектора
 
 	SIGNAL s_OUT_PORT:				std_logic_vector(63 downto 0) := x"FFFFFFFFFFFFFFFE";	-- имитация сигналов блока при работе
+	SIGNAL s_BASE_DATA:				std_logic_vector(63 downto 0) := (others => '1');
 	SIGNAL s_LAS_FILTER:			std_logic_vector(3 downto 0);		-- фильтр импульса запуска лазера
 	SIGNAL s_GEN_FILTER:			std_logic_vector(3 downto 0);		-- фильтр импульма запуска генеретора
 
@@ -42,6 +43,7 @@ begin
 	begin
 		if rising_edge(p_CLK) then
 
+			p_OUT_IMP <= s_BASE_DATA;
 -- проверка стенда на сарабатывание от пачек импульсов 
 		-- фильт сигнала запуска лазера
 			s_LAS_FILTER(2 downto 0) <= s_LAS_FILTER(3 downto 1);
@@ -75,12 +77,12 @@ begin
 				-- выдача сигнала на один из портов
 					when st_imp =>	if s_CNT >= 300 then
 										s_CNT <= 0;
-										p_OUT_IMP <= (others => '1');
+										s_BASE_DATA <= (others => '1');
 										s_OUT_PORT <= s_OUT_PORT(62 downto 0) & s_OUT_PORT(63);
 										s_FSM <= st_gen;
 									else
 										s_CNT <= s_CNT + 1;
-										p_OUT_IMP <= s_OUT_PORT;
+										s_BASE_DATA <= s_OUT_PORT;
 										s_FSM <= st_imp;
 									end if;
 
